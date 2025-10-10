@@ -1,0 +1,16 @@
+# Reference: https://docs.docker.com/reference/compose-file/
+name: rat-rust
+
+services:
+  devcontainer:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    command: bash -c "sleep infinity"
+    container_name: devcontainer
+    environment:
+      RUST_BACKTRACE: "1"
+    image: ubuntu:24.04
+    volumes:
+      - ..:/workspaces/rat-rust
+    working_dir: /workspaces/rat-rust
