@@ -6,6 +6,7 @@ pub fn install() -> Result<PathBuf, crate::Error> {
     let install_dir = config::get_agent_directory()?;
     let install_target = config::get_agent_install_target()?;
 
+    eprintln!("Install target is {}", install_target.display());
     if !install_target.exists() {
         println!("Installing into {}", install_dir.display());
         let current_exe = env::current_exe()?;

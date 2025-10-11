@@ -6,7 +6,7 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    command: bash -c "sleep infinity"
+    command: bash -c "/usr/sbin/sshd -D"
     container_name: devcontainer
     environment:
       RUST_BACKTRACE: "1"
