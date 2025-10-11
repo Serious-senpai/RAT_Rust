@@ -1,8 +1,6 @@
 [workspace]
 
-members = [
-    "agent",
-]
+members = ["agent", "client", "common", "server"]
 
 [profile.release]
 lto = true
