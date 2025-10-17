@@ -6,7 +6,9 @@ RUN apt-get update && apt-get install -y \
     cmake \
     curl \
     git \
+    iputils-ping \
     openssh-server \
+    postgresql-client \
     zip
 
 RUN curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -s -- --default-toolchain=1.89 -y

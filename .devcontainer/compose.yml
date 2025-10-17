@@ -2,6 +2,15 @@
 name: rat-rust
 
 services:
+  database:
+    container_name: postgres
+    environment:
+      POSTGRES_USER: bhr
+      POSTGRES_PASSWORD: ch11
+      POSTGRES_DB: ch11
+    hostname: postgres
+    image: postgres:16.10-alpine
+
   devcontainer:
     build:
       context: ..

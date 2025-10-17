@@ -7,7 +7,11 @@ echo "Got rat directory: $RAT_DIR"
 
 cd $RAT_DIR
 cargo build --release --target x86_64-unknown-linux-gnu
-cp target/x86_64-unknown-linux-gnu/release/agent target/agent.linux_x86_64
 
+# Prepare agent
+cp target/x86_64-unknown-linux-gnu/release/agent target/agent.linux_x86_64
 rm -rf bundle.zip
 zip -j bundle.zip target/agent.linux_x86_64
+
+# Prepare server
+cp env.example .env
